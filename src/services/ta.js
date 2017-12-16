@@ -23,6 +23,7 @@ exports.heikenashi = candles => {
     candle.ha_high = Math.max(candle.high, candle.ha_open, candle.ha_close);
     candle.ha_low = Math.min(candle.low, candle.ha_open, candle.ha_close);
     candle.ha_fill = candle.ha_close < candle.ha_open ? 'red' : 'green';
+    candle.fill = candle.close < candle.open ? 'red' : 'green';
     return candle;
   });
 };

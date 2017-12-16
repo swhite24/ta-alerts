@@ -15,8 +15,9 @@ const exec = async (symbols, loader) => {
       console.log(`
 Potential Buy: ${ symbol }
 Last Price: ${ candle.close }
+Last Candle: ${ candle.fill }
 MFI: ${ mfi.mfi }
-Last Candle: ${ candle.ha_fill }\n\n
+Last HA Candle: ${ candle.ha_fill }\n\n
 `);
     }
   }
