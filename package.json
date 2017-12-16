@@ -1,0 +1,22 @@
+{
+  "name": "ta-alerts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "author": "Steven White <swhitewvu24@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "config": "^1.28.1",
+    "node-binance-api": "^0.2.11",
+    "talib": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "eslint": "^4.13.1",
+    "nodemon": "^1.13.3"
+  }
+}

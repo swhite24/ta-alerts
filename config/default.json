@@ -1,0 +1,48 @@
+{
+  "binance": {
+    "base_url": "https://api.binance.com",
+    "symbols": [
+      "IOTA",
+      "EOS",
+      "SUB",
+      "TRX",
+      "WABI"
+    ]
+  },
+  "bittrex": {
+    "base_url": "https://bittrex.com/api/v1.1",
+    "base_urlv2": "https://bittrex.com/Api/v2.0",
+    "symbols": [
+      "ADA",
+      "ARDR",
+      "ARK",
+      "CVC",
+      "DASH",
+      "EMC2",
+      "ETC",
+      "ETH",
+      "LSK",
+      "LTC",
+      "MANA",
+      "MCO",
+      "MONA",
+      "NEO",
+      "NXT",
+      "OMG",
+      "PAY",
+      "POWR",
+      "QTUM",
+      "SALT",
+      "STEEM",
+      "STRAT",
+      "VTC",
+      "WAVES",
+      "XEM",
+      "XLM",
+      "XMR",
+      "XRP",
+      "XVG",
+      "ZEC"
+    ]
+  }
+}
