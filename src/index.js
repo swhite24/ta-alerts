@@ -3,13 +3,24 @@ const binance = require('./services/binance');
 const bittrex = require('./services/bittrex');
 const ta = require('./services/ta');
 
-const exec = (symbols, loader) =>
-  symbols.reduce((chain, symbol) =>
-    chain
-      .then(() => loader(symbol))
-      .then(candles => ta.mfi(candles))
-      .then(mfis => console.log(`${ symbol } mfi: `, mfis[mfis.length - 1]))
-    , Promise.resolve());
+const exec = async (symbols, loader) => {
+  for (let i = 0, len = symbols.length; i < len; i++) {
+    const symbol = symbols[i];
+    const candles = ta.heikenashi(await loader(symbol));
+    const mfis = await ta.mfi(candles);
+
+    const mfi = mfis[mfis.length - 1];
+    const candle = candles[candles.length - 1];
+    if (mfi.mfi <= 25) {
+      console.log(`
+Potential Buy: ${ symbol }
+Last Price: ${ candle.close }
+MFI: ${ mfi.mfi }
+Last Candle: ${ candle.ha_fill }\n\n
+`);
+    }
+  }
+};
 
 exec(config.bittrex.symbols, bittrex.getCandles)
   .then(() => exec(config.binance.symbols, binance.getCandles));
